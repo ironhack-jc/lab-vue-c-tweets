@@ -1,19 +1,15 @@
 
 <template>
-  <div class="tweet">
-    <ProfileImage :image="tweets.user.image"/>
-
+  <div class="tweet" v-for="tweet in tweets">
+    <ProfileImage :image="tweet.user.image"/>
     <div class="body">
       <div class="top">
-        <User :name="tweets.user.name" :handle="tweets.user.handle"/>
-        <TimeStamp :time="tweets.timestamp"/>
+        <User :name="tweet.user.name" :handle="tweet.user.handle"/>
+        <TimeStamp :time="tweet.timestamp"/>
       </div>
-
-      <Message :message="tweets.message"/>
-
+      <Message :message="tweet.message"/>
      <Action/>
     </div>
-
     <i class="fas fa-ellipsis-h"></i>
   </div>
 </template>
